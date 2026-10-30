@@ -1,0 +1,20 @@
+:root{
+/* Soft-UI light + dark pair: highlight top-left, warm shadow bottom-right */
+--shadow-light:rgba(255,248,240,.95);
+--shadow-dark:rgba(150,90,70,.30);
+--shadow-dark-strong:rgba(120,60,50,.38);
+
+--elev-1:1px 1px 2px var(--shadow-dark),-1px -1px 2px var(--shadow-light);
+--elev-2:3px 3px 7px var(--shadow-dark),-3px -3px 7px var(--shadow-light);
+--elev-3:6px 6px 14px var(--shadow-dark),-6px -6px 14px var(--shadow-light);
+--elev-4:10px 10px 24px var(--shadow-dark),-8px -8px 20px var(--shadow-light);
+--elev-5:16px 16px 36px var(--shadow-dark-strong),-10px -10px 28px var(--shadow-light);
+
+--shadow-raised:var(--elev-3);
+--shadow-inset:inset 3px 3px 7px var(--shadow-dark),inset -3px -3px 7px var(--shadow-light);
+--shadow-pressed:inset 6px 6px 12px var(--shadow-dark-strong),inset -5px -5px 10px var(--shadow-light);
+--shadow-field:inset 2px 2px 4px rgba(150,90,70,.16),inset -2px -2px 4px rgba(255,248,240,.7);
+--shadow-primary:4px 4px 10px rgba(89,23,27,.30),-3px -3px 8px var(--shadow-light),inset 1px 1px 0 rgba(255,255,255,.14);
+--shadow-primary-pressed:inset 3px 3px 7px rgba(30,4,6,.45),inset -2px -2px 5px rgba(255,255,255,.08);
+--shadow-tooltip:0 6px 16px rgba(46,18,20,.28);
+}

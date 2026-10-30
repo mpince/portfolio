@@ -1,0 +1,5 @@
+html,body{background:var(--surface-page);color:var(--text-body);font-family:var(--font-sans);font-size:var(--fs-14);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+a{color:var(--text-accent);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--burgundy-800)}
+@keyframes matt-spin{to{transform:rotate(360deg)}}
+@keyframes matt-shimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}

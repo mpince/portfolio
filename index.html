@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="ext-resource-dependency" content="images/portrait.webp" data-resource-id="img-portrait">
+<meta name="ext-resource-dependency" content="images/proj-tipe.webp" data-resource-id="img-proj-tipe">
+<meta name="ext-resource-dependency" content="images/proj-ldr.webp" data-resource-id="img-proj-ldr">
+<meta name="ext-resource-dependency" content="cv/CV-Matteo-Pince-EN.pdf" data-resource-id="cv-en">
+<meta name="ext-resource-dependency" content="cv/CV-Matteo-Pince-FR.pdf" data-resource-id="cv-fr">
+<title>Mattéo Pince — E-Portfolio</title>
+<link rel="stylesheet" href="ds/tokens/fonts.css">
+<link rel="stylesheet" href="ds/tokens/colors.css">
+<link rel="stylesheet" href="ds/tokens/typography.css">
+<link rel="stylesheet" href="ds/tokens/spacing.css">
+<link rel="stylesheet" href="ds/tokens/elevation.css">
+<link rel="stylesheet" href="ds/tokens/base.css">
+<link rel="stylesheet" href="ds/styles.css">
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font:var(--type-body)}
+a{color:var(--text-accent);text-decoration:none}a:hover{color:var(--surface-primary-hover);text-decoration:underline}
+.v2-wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.v2-nav{position:sticky;top:0;z-index:10;background:var(--surface-page);box-shadow:0 1px 0 var(--border-subtle)}
+.v2-nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.v2-brand{font:400 24px/1 var(--font-display);color:var(--text-accent)}
+.v2-brand:hover{text-decoration:none}
+.v2-links{display:flex;gap:4px;flex-wrap:wrap}
+.v2-links a{padding:9px 14px;border-radius:999px;font:600 13px/1 var(--font-sans);color:var(--text-secondary);transition:background var(--dur-fast) var(--ease-soft),color var(--dur-fast) var(--ease-soft)}
+.v2-links a:hover{background:rgba(89,23,27,.07);color:var(--text-accent);text-decoration:none}
+.v2-links a.on{background:var(--surface-primary);color:var(--text-on-primary,#FBE2CE)}
+.v2-hero{min-height:calc(100vh - 72px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:64px;align-items:center;padding:48px 0}
+.v2-hero h1{font:400 clamp(52px,8vw,104px)/0.95 var(--font-display);letter-spacing:-0.02em;color:var(--text-accent);margin:0 0 32px}
+.v2-hero p{font-size:18px;line-height:1.6;color:var(--text-secondary);max-width:540px;margin:0 0 32px;text-wrap:pretty}
+.v2-meta{display:flex;flex-direction:column;gap:12px;margin:0 0 32px}
+.v2-meta div{display:flex;align-items:center;gap:12px;font:600 14px/1.2 var(--font-sans);color:var(--text-body)}
+.v2-meta span.ic{color:var(--text-accent);display:flex}
+.v2-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.v2-portrait{width:100%;max-width:400px;justify-self:end}
+.v2-sec{padding:96px 0 32px}
+.v2-sec-head{display:flex;align-items:flex-end;gap:24px;margin-bottom:48px}
+.v2-num{font:500 13px/1 var(--font-mono);color:var(--text-muted);padding-bottom:10px}
+.v2-sec-head h2{font:400 clamp(40px,5vw,56px)/1 var(--font-display);margin:0;color:var(--text-accent)}
+.v2-rule{flex:1;height:1px;background:var(--border-subtle);margin-bottom:12px}
+.v2-label{font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-muted);margin:0 0 18px}
+.v2-projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px}
+.v2-shot{aspect-ratio:16/9;width:100%;margin-bottom:24px}
+.v2-h3{font:700 22px/1.25 var(--font-sans);margin:0 0 12px;color:var(--text-body)}
+.v2-badge-top{margin-bottom:12px;display:flex}
+.v2-desc{color:var(--text-secondary);margin:0;line-height:1.65;font-size:15px;text-wrap:pretty}
+.v2-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.v2-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px}
+.v2-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.v2-list li{display:flex;gap:12px;align-items:flex-start;color:var(--text-secondary);font-size:15px;line-height:1.55}
+.v2-list li .ic{color:var(--text-accent);flex:none;margin-top:3px;display:flex}
+.v2-eng{display:grid;gap:0}
+.v2-eng-row{display:grid;grid-template-columns:56px minmax(0,1fr);gap:24px;padding:32px 0;border-top:1px solid var(--border-subtle)}
+.v2-eng-row:last-child{border-bottom:1px solid var(--border-subtle)}
+.v2-eng-ic{width:56px;height:56px}
+.v2-doc-row{display:flex;gap:12px;flex-wrap:wrap}
+.v2-overlay{position:fixed;inset:0;z-index:50;background:rgba(46,18,20,.28);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:grid;place-items:center;padding:24px}
+.v2-video{aspect-ratio:16/9;width:100%;border-radius:16px;overflow:hidden;background:var(--surface-sunken);box-shadow:var(--shadow-inset)}
+.v2-video iframe,.v2-video video{width:100%;height:100%;border:0;display:block;background:#2E1214}
+.v2-video-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--taupe-600,#A8705F);font:600 14px/1 var(--font-sans);border:1.5px dashed var(--surface-disabled,#D9AD92);border-radius:16px;box-sizing:border-box}
+.v2-foot{margin-top:96px;padding:32px 0 48px;border-top:1px solid var(--border-subtle);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--text-muted);font:var(--type-caption)}
+@media (max-width:820px){.v2-links{display:none}.v2-hero{grid-template-columns:1fr;min-height:0;gap:40px}.v2-portrait{justify-self:start;max-width:300px}.v2-sec{padding-top:64px}.v2-eng-row{grid-template-columns:1fr;gap:15px}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="ds/_ds_bundle.js"></script>
+<script src="icons.js"></script>
+<script src="image-slot.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#F6E4D6"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F6E4D6"/><text x="50" y="64" text-anchor="middle" font-family="Georgia,serif" font-size="42" fill="#59171B">MP</text></svg></template>
+<script type="text/babel">
+const { Button, Badge, Surface, Icon } = window.MattDesignSystem_83f902;
+const R = (id, path) => (window.__resources && window.__resources[id]) || path;
+const CV_EN = R("cv-en", "cv/CV-Matteo-Pince-EN.pdf"), CV_FR = R("cv-fr", "cv/CV-Matteo-Pince-FR.pdf");
+
+// Elevator pitch: paste a YouTube / Vimeo link, or a local video path (e.g. "video/pitch.mp4")
+const PITCH_VIDEO = "";
+
+function toEmbed(url) {
+  let m = url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{6,})/);
+  if (m) return { type: "iframe", src: "https://www.youtube.com/embed/" + m[1] + "?autoplay=1&rel=0" };
+  m = url.match(/vimeo\.com\/(\d+)/);
+  if (m) return { type: "iframe", src: "https://player.vimeo.com/video/" + m[1] + "?autoplay=1" };
+  m = url.match(/drive\.google\.com\/file\/d\/([\w-]+)/);
+  if (m) return { type: "iframe", src: "https://drive.google.com/file/d/" + m[1] + "/preview" };
+  return { type: "video", src: url };
+}
+
+function PitchModal({ open, onClose }) {
+  React.useEffect(() => {
+    if (!open) return;
+    const k = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, [open]);
+  if (!open) return null;
+  const v = PITCH_VIDEO ? toEmbed(PITCH_VIDEO) : null;
+  return (
+    <div className="v2-overlay" onClick={onClose}>
+      <Surface variant="raised" radius={24} padding={18} style={{ width: "min(960px, 100%)", boxShadow: "var(--elev-4)" }} onClick={(e) => e.stopPropagation()}>
+        <div className="v2-row" style={{ justifyContent: "space-between", padding: "4px 6px 18px" }}>
+          <div className="v2-row"><h3 className="v2-h3" style={{ margin: 0 }}>Elevator Pitch</h3><Badge variant="soft">3 min</Badge></div>
+          <Button variant="ghost" icon="x" onClick={onClose}>Close</Button>
+        </div>
+        <div className="v2-video">
+          {v && v.type === "iframe" && <iframe src={v.src} allow="autoplay; fullscreen; picture-in-picture" allowFullScreen title="Elevator Pitch"></iframe>}
+          {v && v.type === "video" && <video src={v.src} controls autoPlay></video>}
+          {!v && <div className="v2-video-empty"><Icon name="video" size={24} /><span>Video Coming Soon</span></div>}
+        </div>
+      </Surface>
+    </div>
+  );
+}
+
+const NAV = [["welcome","Welcome"],["engineering","Engineering"],["career","Career"],["mobility","Mobility"],["engagement","Engagement"],["activities","Activities"]];
+
+function useActive() {
+  const [active, setActive] = React.useState("welcome");
+  React.useEffect(() => {
+    const els = NAV.map(([id]) => document.getElementById(id)).filter(Boolean);
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+  return active;
+}
+
+function Section({ id, num, title, children }) {
+  return (
+    <section className="v2-sec" id={id} data-screen-label={title}>
+      <div className="v2-sec-head"><span className="v2-num">{num}</span><h2>{title}</h2><div className="v2-rule"></div></div>
+      {children}
+    </section>
+  );
+}
+
+function IconWell({ name, size = 56 }) {
+  return (
+    <Surface variant="inset" radius={16} padding={0} style={{ width: size, height: size, display: "grid", placeItems: "center", color: "var(--text-accent)" }}>
+      <Icon name={name} size={24} />
+    </Surface>
+  );
+}
+
+function Bullets({ items }) {
+  return <ul className="v2-list">{items.map((t) => <li key={t}><span className="ic"><Icon name="check" size={16} /></span><span>{t}</span></li>)}</ul>;
+}
+
+function Ext({ href, variant, icon, children, download }) {
+  return <a href={href} target={download ? undefined : "_blank"} rel="noopener" download={download} style={{ textDecoration: "none" }}><Button variant={variant} icon={icon}>{children}</Button></a>;
+}
+
+function Project({ slot, badge, badgeVariant, title, desc, tags, github }) {
+  return (
+    <Surface variant="raised" radius={24} padding={18}>
+      <div className="v2-shot"><image-slot id={slot} src={R("img-" + slot, "images/" + slot + ".webp")} shape="rounded" radius="16" placeholder={"Project image: " + title}></image-slot></div>
+      <div style={{ padding: "0 8px 8px" }}>
+        {badge && <div className="v2-badge-top"><Badge variant={badgeVariant}>{badge}</Badge></div>}
+        <h3 className="v2-h3">{title}</h3>
+        <p className="v2-desc">{desc}</p>
+        <div className="v2-chips">{tags.map((t) => <Badge key={t} variant="outline">{t}</Badge>)}</div>
+        {github && <div className="v2-row" style={{ marginTop: 24 }}><Ext href={github} variant="secondary" icon="github">View on GitHub</Ext></div>}
+      </div>
+    </Surface>
+  );
+}
+
+function EngRow({ icon, title, badge, children }) {
+  return (
+    <div className="v2-eng-row">
+      <div className="v2-eng-ic"><IconWell name={icon} /></div>
+      <div>
+        <div className="v2-row" style={{ marginBottom: 12 }}><h3 className="v2-h3" style={{ margin: 0 }}>{title}</h3>{badge && <Badge variant="soft">{badge}</Badge>}</div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function Card({ icon, title, badge, badgeVariant = "soft", children }) {
+  return (
+    <Surface variant="raised" radius={24} padding={32}>
+      <div className="v2-row" style={{ justifyContent: "space-between", marginBottom: 24 }}><IconWell name={icon} />{badge && <Badge variant={badgeVariant}>{badge}</Badge>}</div>
+      <h3 className="v2-h3">{title}</h3>
+      {children}
+    </Surface>
+  );
+}
+
+function App() {
+  const active = useActive();
+  const [pitch, setPitch] = React.useState(false);
+  return (
+    <>
+      <nav className="v2-nav">
+        <div className="v2-wrap v2-nav-in">
+          <a className="v2-brand" href="#welcome">Mattéo Pince</a>
+          <div className="v2-links">{NAV.map(([id, l]) => <a key={id} href={"#" + id} className={active === id ? "on" : ""}>{l}</a>)}</div>
+        </div>
+      </nav>
+      <div className="v2-wrap">
+        <header className="v2-hero" id="welcome" data-screen-label="Welcome">
+          <div>
+            <h1>Mattéo<br />Pince</h1>
+            <div className="v2-meta">
+              <div><span className="ic"><Icon name="graduation-cap" size={20} /></span>Computer Science Engineering Student</div>
+              <div><span className="ic"><Icon name="map-pin" size={20} /></span>ENSEEIHT, Toulouse</div>
+            </div>
+            <p>Hello and welcome to my e-portfolio. My name is Mattéo Pince. I’m an engineering student in computer science and this website consists of a presentation of my work, my experience and my achievements reflecting my professional life.</p>
+            <div className="v2-row">
+              <Button icon="play" onClick={() => setPitch(true)}>Elevator Pitch</Button>
+              <Ext href={CV_EN} variant="secondary" icon="download" download>Download CV</Ext>
+            </div>
+          </div>
+          <Surface variant="raised" radius={32} padding={15} className="v2-portrait" style={{ justifySelf: "end", width: "100%", maxWidth: 400 }}>
+            <div style={{ aspectRatio: "4/5", width: "100%" }}>
+              <image-slot id="portrait" src={R("img-portrait", "images/portrait.webp")} shape="rounded" radius="22" placeholder="Drop your portrait"></image-slot>
+            </div>
+          </Surface>
+        </header>
+
+        <Section id="engineering" num="01" title="Engineering">
+          <p className="v2-label">Projects</p>
+          <div className="v2-projects">
+            <Project slot="proj-tipe" badge="Completed" badgeVariant="success" title="TIPE: Natural Selection" desc="A study of natural selection using agent-based modeling." tags={["Agent-Based Modeling", "Simulation"]} github="https://github.com/mpince" />
+            <Project slot="proj-ldr" badge="In Progress" badgeVariant="warning" title="Long-Distance Relationship App" desc="Currently working on an app regarding long-distance relationships." tags={["App Development"]} />
+          </div>
+        </Section>
+
+        <Section id="career" num="02" title="Career">
+          <div className="v2-two">
+            <Card icon="file-text" title="Résumé">
+              <div className="v2-doc-row" style={{ marginTop: 18 }}>
+                <Ext href={CV_EN} icon="download" download>English CV</Ext>
+                <Ext href={CV_FR} variant="secondary" icon="download" download>French CV</Ext>
+              </div>
+            </Card>
+            <Card icon="target" title="Career Interests">
+              <Bullets items={["Cybersecurity", "Modeling and simulation"]} />
+            </Card>
+            <Card icon="linkedin" title="LinkedIn">
+              <p className="v2-desc">Follow my professional journey.</p>
+              <div className="v2-row" style={{ marginTop: 24 }}><Ext href="https://www.linkedin.com/in/matteo-pince" variant="secondary" icon="external-link">View Profile</Ext></div>
+            </Card>
+            <Card icon="github" title="GitHub">
+              <p className="v2-desc">Code for my projects: TIPE and the long-distance relationship app.</p>
+              <div className="v2-row" style={{ marginTop: 24 }}><Ext href="https://github.com/mpince" variant="secondary" icon="external-link">View GitHub</Ext></div>
+            </Card>
+          </div>
+        </Section>
+
+        <Section id="mobility" num="03" title="Mobility">
+          <div className="v2-two">
+            <Card icon="plane" title="California, USA" badge="Done" badgeVariant="success">
+              <p className="v2-desc">Two years abroad during middle school. An enriching immersion that helped me discover a new culture, learn a new language, meet new people as well as develop strong adaptability.</p>
+            </Card>
+            <Card icon="compass" title="Scandinavian Countries & Canada" badge="Planned">
+              <Bullets items={["Improve technical English and enrich my vocabulary", "Develop technical skills", "Discover new cultures, ways of life and perspectives by meeting people from different backgrounds"]} />
+            </Card>
+          </div>
+        </Section>
+
+        <Section id="engagement" num="04" title="Engagement">
+          <div className="v2-eng">
+            <EngRow icon="scale" title="The Trial of King Kong">
+              <p className="v2-desc">I had the chance to take part in The Trial of King Kong, an interactive play that addresses gender-based and sexual violence and its consequences. The audience isn’t just watching but is invited to engage in the debate, which made the experience especially thought-provoking.</p>
+            </EngRow>
+            <EngRow icon="globe" title="Climate Fresk">
+              <p className="v2-desc">Together with other ENSEEIHT students, I took part in a Climate Fresk. This collaborative activity raised our awareness of climate change and of the challenges awaiting us as future engineers.</p>
+            </EngRow>
+            <EngRow icon="lightbulb" title="“Futur Proche” Festival">
+              <p className="v2-desc">I attended the Futur Proche (“Near Future”) festival with two of my classmates. Its conferences, workshops and presentations raised awareness about climate issues from a scientific perspective, highlighting the potential of both existing innovations and those still in development.</p>
+            </EngRow>
+            <EngRow icon="leaf" title="Wildlife Project Abroad" badge="Planned">
+              <Bullets items={["Wildlife monitoring", "Wildlife care center support"]} />
+            </EngRow>
+          </div>
+        </Section>
+
+        <Section id="activities" num="05" title="Activities">
+          <div className="v2-two">
+            <Card icon="mountain" title="Hiking & Climbing"><div className="v2-chips"><Badge variant="outline">Teamwork</Badge><Badge variant="outline">Problem-Solving</Badge></div></Card>
+            <Card icon="dumbbell" title="Gym"><div className="v2-chips"><Badge variant="outline">Perseverance</Badge><Badge variant="outline">Discipline</Badge></div></Card>
+          </div>
+        </Section>
+
+        <PitchModal open={pitch} onClose={() => setPitch(false)} />
+        <footer className="v2-foot"><span>© 2026 Mattéo Pince</span><span>Made with Claude</span></footer>
+      </div>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

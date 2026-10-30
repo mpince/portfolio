@@ -1,0 +1,11 @@
+:root{
+--space-1:2px;--space-2:4px;--space-3:8px;--space-4:12px;--space-5:15px;--space-6:18px;--space-7:24px;--space-8:32px;--space-9:48px;--space-10:64px;
+--radius-4:4px;--radius-8:8px;--radius-12:12px;--radius-16:16px;--radius-24:24px;--radius-pill:999px;
+--border-thin:1px;--border-regular:2px;--border-thick:4px;
+--control-h-sm:32px;--control-h-md:40px;--control-h-lg:48px;
+--icon-16:16px;--icon-20:20px;--icon-24:24px;--icon-stroke:2px;
+--dur-fast:120ms; /* @kind other */
+--dur-base:200ms; /* @kind other */
+--dur-slow:320ms; /* @kind other */
+--ease-soft:cubic-bezier(.25,.8,.35,1); /* @kind other */
+}
